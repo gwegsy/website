@@ -1,5 +1,5 @@
 machine:
-  enviroment:
+  environment:
     HUGO_VERSION: 0.19
     NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
