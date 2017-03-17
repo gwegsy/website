@@ -7,7 +7,7 @@ dependencies:
   pre:
     - scripts/install-hugo.sh
   post:
-    - HUGO_ENV=production hugo -v
+    - HUGO_ENV=production hugo -v -s .
     - gem install html-proofer
   cache_directories:
     - ~/bin
