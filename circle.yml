@@ -7,7 +7,7 @@ dependencies:
   pre:
     - scripts/install-hugo.sh
   post:
-    - HUGO_ENV=production hugo -v -s .
+    - HUGO_ENV=production hugo -v
     - gem install html-proofer
   cache_directories:
     - ~/bin
@@ -15,8 +15,8 @@ dependencies:
 
 test:
   override:
-    - ls -lah hugo/public
-    - htmlproofer hugo/public --allow-hash-href --check-html --empty-alt-ignore --disable-external | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt' exit ${PIPESTATUS[0]}
+    - ls -lah public
+    - htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt; exit ${PIPESTATUS[0]}
 
 deployment:
   production:
