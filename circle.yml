@@ -22,4 +22,6 @@ deployment:
   production:
     branch: master
     commands:
+      - git config --global user.email "deploy-bot@coderdojonavan.ie"
+      - git config --global user.name "CoderDojoNavan DeployBot"
       - scripts/pages-deploy.sh
