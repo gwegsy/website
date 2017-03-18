@@ -18,6 +18,7 @@ git init
 git remote add --fetch origin "$remote"
 
 if git rev-parse --verify origin/gh-pages > /dev/null 2>&1
+then 
 	git checkout gh-pages
 	git rm -rf .
 else
