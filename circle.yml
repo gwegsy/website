@@ -24,4 +24,5 @@ deployment:
     commands:
       - git config --global user.email "deploy-bot@coderdojonavan.ie"
       - git config --global user.name "CoderDojoNavan DeployBot"
+      - echo "new.coderdojonavan.ie" >> static/CNAME
       - scripts/pages-deploy.sh
