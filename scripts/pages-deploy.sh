@@ -1,27 +1,36 @@
 #!/bin/sh
-DIR=$(dirname $0)
 
-cd $DIR/..
+# Based on github.com/DevProgress/onboarding
 
-if [[ $(git status -s) ]]; then
-	echo "The working directory is dirty. Please commit any pending changes"
-	exit 1;
-fi
+set -e
+pwd
+remote=$(git config remote.origin.url)
 
-echo "Deleting old publications"
 rm -rf public
-mkdir public
-
-echo "Checking out gh-pages branch into public"
-git clone .git --branch gh-pages public
-
-echo "Removing exisiting files"
-rm -rf public/*
-
-echo "Generating site"
 HUGO_ENV=production hugo -v
 
-echo "Updating gh-pages branch"
-cd public && git add --all && git commit -m "Publishing to gh-pages"
+mkdir gh-pages-branch
+cd gh-pages-branch
 
-git push origin gh-pages -f
+git config --global user.email "deploy@coderdojonavan.ie" > /dev/null 2>&1
+git config --global user.name "CoderDojoNavan Deploy" > /dev/null 2>&1
+git init
+git remote add --fetch origin "$remote"
+
+if git rev-parse --verify origin/gh-pages > /dev/null 2> &1
+	git checkout gh-pages
+	git rm -rf .
+else
+	git checkout --orphan gh-pages
+fi
+
+cp -a ../public .
+
+git add -A
+git commit --allow-empty -m "Deploying to pages on `date` [ci skip]"
+git push --force --quiet origin gh-pages
+
+cd ..
+rm -rf gh-pages-branch
+
+echo "Finished deployment"
