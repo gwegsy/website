@@ -91,7 +91,7 @@ Check out and Like our [Facebook page](https://www.facebook.com/CoderDojoNavan/)
    (even an old wired mouse) as the Paint Editor doesn't suit a laptop mouse
 	 pad.
 5. If you are new to the CoderDojo Navan, you can pre-register as a member by
-   downloading our [registration form](/coderdojo-navan-member-registration-and-parental-permission-form.pdf),
+   downloading our __registration form__,
 	 fill out and present it to a mentor when you arrive.
 
 ## Happy Coding!

@@ -1,4 +1,9 @@
-author = "Wojtek Bednarzak"
-description = "Theme designed for CoderDojo Navan"
 name = "cdn"
-source_repo = ""
+description = "Theme designed for Coder Dojo Navan"
+tags = []
+features = []
+min_version = 0.19
+
+[author]
+  name = "Wojtek Bednarzak"
+  homepage = "http://wojtek.bednarzak.com"
