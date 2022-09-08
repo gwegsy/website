@@ -1,4 +1,2 @@
-languageCode = "en-us"
-title = "CoderDojo Navan"
-baseURL = "new.coderdojonavan.ie"
-theme = "cdn"
+languageCode = 'en-ie'
+title = 'CoderDojo Navan'

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body class="pa0 ma0 bg-dark-green sans-serif">
+  <div class="flex flex-column mw9 w9 center bg-white">
+    <header class="white flex flex-column">
+      <a href="/" alt="CoderDojo Navan banner" class="ma0 pa0 contain">
+        {{ $image := resources.Get "images/header.png" }}
+        <img class="" src="{{ $image.RelPermalink }}" width="100%" height="100%" />
+      </a>
+      <nav class="bg-black pa2">
+        <a href="/" class="dim pa2">Home</a>
+        <a href="/posts" class="dim pa2">Updates</a>
+      {{- range .Site.Menus.top }}
+        <a href="{{ .URL }}" class="dim pa2">{{ .Title }}</a>
+      {{- end }}
+      </nav>
+    </header>

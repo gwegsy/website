@@ -1,0 +1,11 @@
+<a href="{{ .Permalink }}">
+  <article class="ma2 mv3 pa2 dim br4 bg-near-white pointer fw3 near-black">
+    <hgroup>
+      <h1 class="ma0 mb2 normal">{{ .Title }}</h1>
+      <h4 class="ma0 mb2 fw5">{{ .Date | time.Format ":date_long" }}</h4>
+    </hgroup>
+    <main style="word-break: break-word;">
+      {{ .Summary }}
+    </main>
+  </article>
+</a>

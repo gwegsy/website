@@ -1,9 +1,0 @@
-name = "cdn"
-description = "Theme designed for Coder Dojo Navan"
-tags = []
-features = []
-min_version = 0.19
-
-[author]
-  name = "Wojtek Bednarzak"
-  homepage = "http://wojtek.bednarzak.com"

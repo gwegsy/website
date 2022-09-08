@@ -1,0 +1,9 @@
+{{- define "main" }}
+
+<h1>Latest Update</h1>
+
+{{ range first 1 (where .Site.RegularPages "Params.menu" nil) }}
+  {{ partial "post-link.html" . }}
+{{ end }}
+
+{{- end }}
