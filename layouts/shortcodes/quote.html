@@ -1,0 +1,16 @@
+{{ $type := .Get 0 }}
+
+{{ $.Scratch.Set "background" "light-gray"}}
+{{ $.Scratch.Set "border" "gray"}}
+
+{{ if (eq $type "note")}}
+  {{ $.Scratch.Set "background" "light-blue"}}
+  {{ $.Scratch.Set "border" "blue"}}
+{{ end }}
+
+<div
+  class="ma4 pa1 ph3 bl bw4 b--{{ $.Scratch.Get "border" }} bg-{{ $.Scratch.Get "background" }}"
+>
+  <h4>{{ .Get 1 }}</h4>
+  <p>{{ .Get 2 }}</p>
+</div>
