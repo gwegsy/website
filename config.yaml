@@ -1,0 +1,5 @@
+languageCode: 'en-ie'
+title: 'CoderDojo Navan'
+
+permalinks:
+  posts: /:year/:slugorfilename

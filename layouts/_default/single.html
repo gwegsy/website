@@ -1,9 +1,6 @@
-{{ define "main"}}
+{{- define "main" }}
 <article>
-  <hgroup>
-    <h1>{{ .Title }}</h1>
-    <h4>{{ .Date | time.Format ":date_long"}}</h4>
-  </hgroup>
+  <h1>{{ .Title }}</h1>
   {{ .Content }}
 </article>
-{{ end }}
+{{- end }}
